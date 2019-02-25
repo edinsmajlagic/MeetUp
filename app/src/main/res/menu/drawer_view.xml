@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_profil"
+            android:title="Profil" />
+        <item
+            android:id="@+id/nav_event"
+            android:title="Svi događaji" />
+        <item
+            android:id="@+id/nav_odjava"
+            android:title="Odjavi se" />
+
+    </group>
+</menu>

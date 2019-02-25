@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NoInternetActivity">
+
+    <ImageView
+        android:id="@+id/IV_Logo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/space"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo" />
+    <TextView
+        android:id="@+id/TV_NemaNeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Problem sa konekcijom, pokušajte ponovo"
+        android:textSize="20sp"
+        android:padding="20dp"
+        android:textAlignment="center"
+        android:layout_centerVertical="true"
+        android:textStyle="italic"
+        />
+</RelativeLayout>

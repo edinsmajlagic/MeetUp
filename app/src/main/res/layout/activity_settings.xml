@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Settings">
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="24dp" />
+
+    <ImageView
+        android:id="@+id/IV_Back"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/space"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_arrow_back_black_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/IV_Back"
+
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingTop="35dp"
+        android:paddingRight="15dp">
+
+        <LinearLayout
+            android:id="@+id/LL_Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:padding="7dp"
+                android:src="@drawable/ic_email_black_24dp"
+                android:tint="#ccc" />
+
+            <EditText
+                android:id="@+id/ET_Email"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false"
+                android:text="test@mail.com" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+
+                android:padding="7dp"
+                android:src="@drawable/ic_person_black_24dp"
+                android:tint="#ccc" />
+
+            <EditText
+                android:id="@+id/ET_Username"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Username" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_Spol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <ImageView
+                android:layout_width="50dp"
+
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_wc_black_24dp"
+                android:tint="#ccc" />
+
+            <RadioGroup
+                android:id="@+id/RG_Spol"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/RB_Musko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="20dp"
+                    android:text="Musko"
+                    android:textSize="18dp" />
+
+                <RadioButton
+                    android:id="@+id/RB_Zensko"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Zensko"
+                    android:textSize="18dp" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LL_DOB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+
+                android:padding="3dp"
+                android:src="@drawable/ic_cake_black_24dp"
+                android:tint="#ccc" />
+
+            <EditText
+                android:id="@+id/ET_DOB"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:text="25.09.1996"
+                android:textAlignment="center" />
+
+            <ImageView
+                android:id="@+id/IV_DOB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_date_range_black_24dp"
+                android:tint="#aaa" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/B_SacuvajPromjene"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/btn_rounded"
+        android:text="Sačuvaj promjene" />
+</RelativeLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#eee"
+    tools:context=".Fragmenti.DogadjajiFragment">
+
+    <Space
+        android:id="@+id/space"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <ImageView
+        android:id="@+id/IV_Logo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/space"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/logo" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/FAB_Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:clickable="true"
+        android:elevation="8dp"
+        android:focusable="true"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:tint="@color/colorWhite"
+        android:translationZ="3dp"
+        app:maxImageSize="35dp"
+        />
+    <TextView
+        android:id="@+id/TV_NemaDogadjaja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="Trenutno nema događaja za odabranu kategoriju"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/RV_Dogadjaji"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/IV_Logo"
+        android:background="#00ffffff"></android.support.v7.widget.RecyclerView>
+</RelativeLayout>
