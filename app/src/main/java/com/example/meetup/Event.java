@@ -130,6 +130,7 @@ public class Event extends AppCompatActivity implements OnMapReadyCallback {
             TV_BrMijesta.setText("Prijave: 0/" + BrMijesta);
             TV_Opis.setText(Opis);
         }
+        
 
 
 
