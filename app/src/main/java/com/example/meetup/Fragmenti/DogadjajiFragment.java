@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +35,7 @@ public class DogadjajiFragment extends Fragment {
     public TextView TV_NemaDogadjaja;
     public RecyclerView recyclerView;
     public FloatingActionButton back;
+    public  ImageView IV_BurgerMenu;
     public RCVDogadjaji rcvDogadjaji;
     public List<Dogadjaj> dogadjaji;
     public FirebaseFirestore db;
@@ -43,12 +45,19 @@ public class DogadjajiFragment extends Fragment {
     }
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dogadjaji, container, false);
         TV_NemaDogadjaja = view.findViewById(R.id.TV_NemaDogadjaja);
+        View view2 = inflater.inflate(R.layout.activity_main2, container, false);
+
+        IV_BurgerMenu = view2.findViewById(R.id.IV_BurgerMenu);
+        IV_BurgerMenu.setVisibility(View.GONE);
+
+
         back = view.findViewById(R.id.FAB_Back);
         recyclerView = view.findViewById(R.id.RV_Dogadjaji);
         db = FirebaseFirestore.getInstance();
@@ -68,7 +77,7 @@ public class DogadjajiFragment extends Fragment {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(MyUtils.pristupInternetu(getActivity()))
+                if (MyUtils.pristupInternetu(getActivity()))
                     getActivity().finish();
                 else
                     Toast.makeText(getActivity(), "Došlo je do greške. Problem sa konekcijom.", Toast.LENGTH_SHORT).show();
@@ -106,10 +115,9 @@ public class DogadjajiFragment extends Fragment {
                                                             document.getData().get("BrMijesta").toString(),
                                                             document.getData().get("Opis").toString());
                                                     dogadjaji.add(d);
-                                                    if(dogadjaji.size()==0)
+                                                    if (dogadjaji.size() == 0)
                                                         TV_NemaDogadjaja.setVisibility(View.VISIBLE);
                                                 }
-
 
 
                                                 rcvDogadjaji.notifyDataSetChanged();
@@ -151,7 +159,7 @@ public class DogadjajiFragment extends Fragment {
                                     dogadjaji.add(d);
 
                                 }
-                                if(dogadjaji.size()==0)
+                                if (dogadjaji.size() == 0)
                                     TV_NemaDogadjaja.setVisibility(View.VISIBLE);
                                 rcvDogadjaji.notifyDataSetChanged();
 

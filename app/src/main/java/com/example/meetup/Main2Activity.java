@@ -23,7 +23,7 @@ public class Main2Activity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS = 20;
     private FirebaseAuth firebaseAuth;
-    public ImageView IV_BurgerMenu;
+    public static ImageView IV_BurgerMenu;
     @Override
     protected void onStart() {
 
@@ -39,6 +39,8 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,7 +62,6 @@ public class Main2Activity extends AppCompatActivity {
                 drawerLayout.openDrawer(navigationView);
             }
         });
-
 
 
         navigationView.setNavigationItemSelectedListener(

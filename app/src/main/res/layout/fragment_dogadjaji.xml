@@ -25,14 +25,15 @@
         android:id="@+id/FAB_Back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="60dp"
         android:clickable="true"
         android:elevation="8dp"
         android:focusable="true"
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:tint="@color/colorWhite"
-        android:translationZ="3dp"
+        android:translationZ="8dp"
         app:maxImageSize="35dp"
         />
     <TextView
@@ -51,5 +52,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/IV_Logo"
+        android:layout_marginTop="50dp"
         android:background="#00ffffff"></android.support.v7.widget.RecyclerView>
 </RelativeLayout>
