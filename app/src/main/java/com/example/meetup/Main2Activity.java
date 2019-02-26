@@ -28,6 +28,8 @@ public class Main2Activity extends AppCompatActivity {
     protected void onStart() {
 
         super.onStart();
+        IV_BurgerMenu.setVisibility(View.VISIBLE);
+
         firebaseAuth = firebaseAuth.getInstance();
         if(MyUtils.pristupInternetu(this))
             MyUtils.zamjeniFragment(this, R.id.FL_MijestoZaFragmente, new HomeFragment());
@@ -39,7 +41,11 @@ public class Main2Activity extends AppCompatActivity {
 
 
     }
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        IV_BurgerMenu.setVisibility(View.VISIBLE);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

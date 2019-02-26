@@ -38,6 +38,13 @@ public class HomeFragment extends Fragment {
     public List<Kategorija> kategorije;
     public FirebaseFirestore db;
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Main2Activity.IV_BurgerMenu.setVisibility(View.VISIBLE);
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
