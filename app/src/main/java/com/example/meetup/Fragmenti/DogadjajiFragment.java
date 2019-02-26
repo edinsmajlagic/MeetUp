@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.meetup.Adapteri.RCVDogadjaji;
 import com.example.meetup.Helper.MyUtils;
+import com.example.meetup.Main2Activity;
 import com.example.meetup.Model.Dogadjaj;
 import com.example.meetup.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,7 +36,8 @@ public class DogadjajiFragment extends Fragment {
     public TextView TV_NemaDogadjaja;
     public RecyclerView recyclerView;
     public FloatingActionButton back;
-    public  ImageView IV_BurgerMenu;
+
+
     public RCVDogadjaji rcvDogadjaji;
     public List<Dogadjaj> dogadjaji;
     public FirebaseFirestore db;
@@ -52,10 +54,8 @@ public class DogadjajiFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_dogadjaji, container, false);
         TV_NemaDogadjaja = view.findViewById(R.id.TV_NemaDogadjaja);
-        View view2 = inflater.inflate(R.layout.activity_main2, container, false);
+        Main2Activity.IV_BurgerMenu.setVisibility(View.GONE);
 
-        IV_BurgerMenu = view2.findViewById(R.id.IV_BurgerMenu);
-        IV_BurgerMenu.setVisibility(View.GONE);
 
 
         back = view.findViewById(R.id.FAB_Back);

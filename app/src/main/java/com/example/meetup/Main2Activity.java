@@ -48,6 +48,7 @@ public class Main2Activity extends AppCompatActivity {
         IV_BurgerMenu=findViewById(R.id.IV_BurgerMenu);
         final NavigationView navigationView = findViewById(R.id.NV_Menu);
         final DrawerLayout drawerLayout = findViewById(R.id.DL_drawer);
+        Main2Activity.IV_BurgerMenu.setVisibility(View.VISIBLE);
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
