@@ -39,10 +39,12 @@ public class RegistrationActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+        MyUtils.HideBar(this);
         ET_Email = findViewById(R.id.ET_Email);
         ET_Password = findViewById(R.id.ET_Password);
         ET_PasswordConfirm = findViewById(R.id.ET_PasswordConfirm);
@@ -145,6 +147,12 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyUtils.HideBar(this);
+
+    }
     private void RegisterUser(String email, String password) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

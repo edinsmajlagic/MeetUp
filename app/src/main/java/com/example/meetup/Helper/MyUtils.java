@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.view.View;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
 
@@ -48,4 +49,12 @@ public class MyUtils {
         return imaWiFi || imaMP;
     }
 
+
+    public static void HideBar(Activity activity){
+        activity.getWindow().getDecorView()
+                .setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+
+    }
 }

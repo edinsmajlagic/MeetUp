@@ -3,6 +3,7 @@ package com.example.meetup;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.example.meetup.Fragmenti.LoginFragment;
 import com.example.meetup.Helper.MyUtils;
@@ -38,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         if(MyUtils.pristupInternetu(this))
         MyUtils.zamjeniFragment(this, R.id.MjestoZaFragment, new LoginFragment());
         else{
@@ -48,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
 
 
 }

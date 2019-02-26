@@ -53,6 +53,7 @@ public class Settings extends AppCompatActivity implements DatePickerDialog.OnDa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        MyUtils.HideBar(this);
 
         ET_Email = findViewById(R.id.ET_Email);
         ET_Username = findViewById(R.id.ET_Username);
@@ -125,6 +126,13 @@ public class Settings extends AppCompatActivity implements DatePickerDialog.OnDa
                 dialogFragment.show(getSupportFragmentManager(), "date picker");
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyUtils.HideBar(this);
+
     }
 
     private void snimiUserInfo() {

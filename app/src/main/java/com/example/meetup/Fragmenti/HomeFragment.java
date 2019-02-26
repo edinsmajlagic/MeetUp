@@ -2,6 +2,7 @@ package com.example.meetup.Fragmenti;
 
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.GridLayoutManager;
@@ -10,9 +11,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.example.meetup.Adapteri.RCVKategorija;
+import com.example.meetup.Main2Activity;
 import com.example.meetup.Model.Kategorija;
+import com.example.meetup.NoInternetActivity;
 import com.example.meetup.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,7 +29,6 @@ import java.util.List;
 
 
 public class HomeFragment extends Fragment {
-
 
     public HomeFragment() {
     }
@@ -48,6 +51,7 @@ public class HomeFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
         recyclerView.setAdapter(rcvKategorija);
+
 
         db.collection("Kategorija")
                 .get()

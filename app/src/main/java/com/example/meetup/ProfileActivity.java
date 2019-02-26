@@ -67,6 +67,8 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        MyUtils.HideBar(this);
+
         setContentView(R.layout.activity_profile);
         settings = findViewById(R.id.IV_settings);
         IV_UserImage = findViewById(R.id.IV_UserImage);
@@ -171,6 +173,12 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        MyUtils.HideBar(this);
+
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
