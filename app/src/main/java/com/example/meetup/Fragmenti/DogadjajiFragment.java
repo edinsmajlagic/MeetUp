@@ -106,10 +106,10 @@ public class DogadjajiFragment extends Fragment {
                                                             document.getData().get("BrMijesta").toString(),
                                                             document.getData().get("Opis").toString());
                                                     dogadjaji.add(d);
-
+                                                    if(dogadjaji.size()==0)
+                                                        TV_NemaDogadjaja.setVisibility(View.VISIBLE);
                                                 }
-                                                if(dogadjaji.size()==0)
-                                                TV_NemaDogadjaja.setVisibility(View.VISIBLE);
+
 
 
                                                 rcvDogadjaji.notifyDataSetChanged();
