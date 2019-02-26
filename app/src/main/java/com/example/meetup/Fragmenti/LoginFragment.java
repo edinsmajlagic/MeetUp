@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.meetup.Helper.MyUtils;
@@ -29,8 +30,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 public class LoginFragment extends Fragment {
     private EditText ET_Email;
     private EditText ET_Password;
+    private TextView TV_Register;
     private Button B_Login;
-    private Button B_NeedAcc;
     private String email;
     private String password;
     private FirebaseAuth mAuth;
@@ -62,8 +63,8 @@ public class LoginFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
         ET_Email = view.findViewById(R.id.ET_Email);
         ET_Password = view.findViewById(R.id.ET_Password);
+        TV_Register = view.findViewById(R.id.TV_RegistrujSe);
         B_Login = view.findViewById(R.id.B_Login);
-        B_NeedAcc = view.findViewById(R.id.B_NeedAcc);
         progressBar = view.findViewById(R.id.PB_Login);
         mAuth = FirebaseAuth.getInstance();
 
@@ -74,13 +75,11 @@ public class LoginFragment extends Fragment {
                 password = ET_Password.getText().toString();
                 progressBar.setVisibility(View.VISIBLE);
                 B_Login.setVisibility(View.GONE);
-                B_NeedAcc.setVisibility(View.GONE);
                 if (email.isEmpty()) {
                     ET_Email.setError("Niste unijeli email");
                     ET_Email.requestFocus();
                     progressBar.setVisibility(View.GONE);
                     B_Login.setVisibility(View.VISIBLE);
-                    B_NeedAcc.setVisibility(View.VISIBLE);
                     return;
                 }
                 if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
@@ -88,7 +87,6 @@ public class LoginFragment extends Fragment {
                     ET_Email.requestFocus();
                     progressBar.setVisibility(View.GONE);
                     B_Login.setVisibility(View.VISIBLE);
-                    B_NeedAcc.setVisibility(View.VISIBLE);
                     return;
                 }
                 if (password.isEmpty()) {
@@ -96,7 +94,6 @@ public class LoginFragment extends Fragment {
                     ET_Password.requestFocus();
                     progressBar.setVisibility(View.GONE);
                     B_Login.setVisibility(View.VISIBLE);
-                    B_NeedAcc.setVisibility(View.VISIBLE);
                     return;
                 }
                 if (MyUtils.pristupInternetu(getActivity()))
@@ -104,13 +101,13 @@ public class LoginFragment extends Fragment {
                 else {
                     progressBar.setVisibility(View.GONE);
                     B_Login.setVisibility(View.VISIBLE);
-                    B_NeedAcc.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "Prijava nije uspjela. Problem sa konekcijom.", Toast.LENGTH_SHORT).show();
 
                 }
             }
         });
-        B_NeedAcc.setOnClickListener(new View.OnClickListener() {
+
+        TV_Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.GONE);
@@ -138,7 +135,6 @@ public class LoginFragment extends Fragment {
                             startActivity(i);
                         } else {
                             B_Login.setVisibility(View.VISIBLE);
-                            B_NeedAcc.setVisibility(View.VISIBLE);
 
                             if (MyUtils.pristupInternetu(getActivity())) {
                                 if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {

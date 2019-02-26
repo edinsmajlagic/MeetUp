@@ -10,6 +10,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.meetup.Fragmenti.DogadjajiFragment;
@@ -21,9 +23,10 @@ public class Main2Activity extends AppCompatActivity {
 
     private static final int MY_PERMISSIONS = 20;
     private FirebaseAuth firebaseAuth;
-
+    public ImageView IV_BurgerMenu;
     @Override
     protected void onStart() {
+
         super.onStart();
         firebaseAuth = firebaseAuth.getInstance();
         if(MyUtils.pristupInternetu(this))
@@ -34,20 +37,32 @@ public class Main2Activity extends AppCompatActivity {
             startActivity(i);
         }
 
-    }
 
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-
-        NavigationView navigationView = findViewById(R.id.NV_Menu);
+        IV_BurgerMenu=findViewById(R.id.IV_BurgerMenu);
+        final NavigationView navigationView = findViewById(R.id.NV_Menu);
         final DrawerLayout drawerLayout = findViewById(R.id.DL_drawer);
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(Main2Activity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS);
         }
+
+
+        IV_BurgerMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(navigationView);
+            }
+        });
+
+
+
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override

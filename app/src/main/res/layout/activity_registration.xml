@@ -63,19 +63,33 @@
         android:layout_above="@+id/B_HaveAcc"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="70dp"
         android:background="@drawable/btn_rounded"
         android:text="Registruj se"
         android:visibility="visible" />
 
-    <Button
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Imaš korisnički račun?"
+        android:layout_above="@+id/B_HaveAcc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="19sp"/>
+    <TextView
         android:id="@+id/B_HaveAcc"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@drawable/btn_needacc_rounded"
-        android:text="Već si registrovan? Prijavi se"
-        android:visibility="visible" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:clickable="true"
+        android:text="Prijavi se"
+        android:textColor="@color/colorBlue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        />
 
     <ProgressBar
         android:id="@+id/PB_Regist"

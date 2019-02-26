@@ -8,6 +8,22 @@
     tools:context=".Main2Activity">
 
     <FrameLayout
+        android:layout_width="wrap_content"
+        android:translationZ="200dp"
+        android:layout_marginTop="24dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="35dp"
+            android:tint="#aaab"
+            android:id="@+id/IV_BurgerMenu"
+            android:layout_margin="20dp"
+            android:src="@drawable/ic_menu_black_24dp"
+            android:layout_height="35dp" />
+    </FrameLayout>
+
+
+
+    <FrameLayout
         android:id="@+id/FL_MijestoZaFragmente"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -131,8 +131,13 @@ public class RCVDogadjajiProf extends RecyclerView.Adapter<RecyclerView.ViewHold
                     else {
                         final Map<String, Object> a = new HashMap<>();
                         a.put("Ocjena", rating);
-                        FirebaseFirestore.getInstance().collection("Kategorija").document(data.get(i).KategorijaID).collection("Dogadjaji").document(data.get(i).DogadjajID)
-                                .collection("Ocjene").document(FirebaseAuth.getInstance().getCurrentUser().getUid()).set(a).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        FirebaseFirestore.getInstance().collection("Kategorija")
+                                                       .document(data.get(i).KategorijaID)
+                                                       .collection("Dogadjaji")
+                                                       .document(data.get(i).DogadjajID)
+                                                       .collection("Ocjene")
+                                                       .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                       .set(a).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {

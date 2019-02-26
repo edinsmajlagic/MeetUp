@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.meetup.Helper.MyUtils;
@@ -31,7 +32,7 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText ET_Password;
     private EditText ET_PasswordConfirm;
     private Button B_Register;
-    private Button B_HaveAcc;
+    private TextView B_HaveAcc;
     private String email;
     private String password;
     private String passwordConfirm;

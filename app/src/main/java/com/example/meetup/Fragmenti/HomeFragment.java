@@ -44,7 +44,10 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.RV_Kategorije);
+
+
         db = FirebaseFirestore.getInstance();
+
 
         kategorije = new ArrayList<>();
         rcvKategorija = new RCVKategorija(kategorije, getActivity());
