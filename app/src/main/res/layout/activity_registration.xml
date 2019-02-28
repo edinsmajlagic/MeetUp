@@ -15,7 +15,7 @@
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:src="@drawable/logo" />
 
     <EditText
@@ -63,7 +63,7 @@
         android:layout_above="@+id/B_HaveAcc"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="115dp"
+        android:layout_marginBottom="135dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/btn_rounded"
         android:text="Registruj se"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="60dp"
         android:clickable="true"
         android:text="Prijavi se"
         android:textColor="@color/colorBlue"

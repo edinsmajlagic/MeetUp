@@ -6,4 +6,5 @@
     <string name="emailpassword_status_fmt">string</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+    <string name="ET_Email">Close navigation drawer</string>
 </resources>
